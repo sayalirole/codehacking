@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\User;
+//use App\User;
 use App\Photo;
 use App\Role;
 
@@ -35,6 +35,15 @@ class User extends Authenticatable
     }
     public function photo(){
         return $this->belongsTo('App\Photo');
+    }
+
+    public function isAdmin()
+    {
+        if ($this->role->name == "admin")
+        {
+            return true;
+        }
+        return false;
     }
 }
 

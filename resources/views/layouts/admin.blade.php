@@ -1,3 +1,4 @@
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -68,7 +69,7 @@
 
     <!-- Header-->
     <header id="header" class="header">
-
+        <a href="{{route('logout')}}"><input type="submit" class="btn-primary btn btn-sm" value="logout"></a>
         <div class="header-menu">
 
             <div class="col-sm-7">

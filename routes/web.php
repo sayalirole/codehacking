@@ -14,14 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/admin/users', 'AdminUsersController');
+
 
 Route::get('/admin',function (){
 
     return view('admin.index');
 })->name('admin');
+
+
+Route::group(['middleware'=>'admin'],function (){
+
+    Route::resource('/admin/users', 'AdminUsersController');
+    Route::resource('/admin/posts', 'AdminPostsController');
+
+
+});

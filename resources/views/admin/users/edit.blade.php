@@ -49,7 +49,7 @@
             </div>
             <br><br>
             <div class="form-group">
-                {!! Form::submit('Create User',['class'=>'btn btn-primary'])!!}
+                {!! Form::submit('Edit User',['class'=>'btn btn-primary'])!!}
             </div>
         </div>
         {!! Form::close() !!}

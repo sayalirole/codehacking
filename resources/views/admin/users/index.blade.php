@@ -1,6 +1,12 @@
 @extends('layouts.admin')
 
 @section('content')
+
+    @if(Session::has('deleted_user'))
+
+        <p class="bg-danger">{{session('deleted_user')}}</p>
+
+        @endif
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -37,7 +43,12 @@
             <td>{{$user->is_active == 1 ? 'Active' : 'Not Active'}}</td>
             <td>{{$user->created_at->diffForHumans()}}</td>
             <td>{{$user->updated_at->diffForHumans()}}</td>
-            <td><a href="{{route('users.edit',$user->id)}}"><input type="submit" class="btn-primary" value="Edit"></a></td>
+            <td>
+                <a href="{{route('users.edit',$user->id)}}"><input type="submit" class="btn-primary btn btn-sm" value="Edit"></a>
+                {!! Form::open(['method'=>'DELETE','action'=>['AdminUsersController@destroy',$user->id],'files'=>true])!!}
+                        {!! Form::submit('Delete',['class'=>'btn btn-danger btn btn-sm'])!!}
+                {!! Form::close() !!}
+            </td>
         </tr>
              @endforeach
         @endif
