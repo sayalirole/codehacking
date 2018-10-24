@@ -56,6 +56,13 @@
                         <li><i class="fa fa-user"></i><a href="{{route('users.create')}}">Create User</a></li>
                     </ul>
                 </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Posts</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-users"></i><a href="{{route('posts.index')}}">All Posts</a></li>
+                        <li><i class="fa fa-user"></i><a href="{{route('posts.create')}}">Create Post</a></li>
+                    </ul>
+                </li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
@@ -183,6 +190,6 @@
         } );
     } )( jQuery );
 </script>
-
+</div>
 </body>
 </html>
