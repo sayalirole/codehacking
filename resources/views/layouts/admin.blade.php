@@ -26,7 +26,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-
+    @yield('style')
 </head>
 <body>
 
@@ -41,7 +41,7 @@
                 <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="./"><img src="{{asset('images/logo.png')}}" alt="Logo"></a>
-            <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+            <a class="navbar-brand hidden" href="./"><img src="{{asset('images/logo.png')}}" alt="Logo"></a>
         </div>
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -57,10 +57,16 @@
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Posts</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Category</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-users"></i><a href="{{route('posts.index')}}">All Posts</a></li>
-                        <li><i class="fa fa-user"></i><a href="{{route('posts.create')}}">Create Post</a></li>
+                        <li><i class="fa fa-users"></i><a href="{{route('categories.index')}}">All Catergories</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Media</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-users"></i><a href="{{route('media.index')}}">All Media</a></li>
+                        <li><i class="fa fa-users"></i><a href="{{route('media.create')}}">Upload Media</a></li>
                     </ul>
                 </li>
             </ul>
@@ -159,6 +165,7 @@
 
     @yield('content')
 
+
     <!-- /#right-panel -->
 
 <!-- Right Panel -->
@@ -190,6 +197,7 @@
         } );
     } )( jQuery );
 </script>
+    @yield('script')
 </div>
 </body>
 </html>
